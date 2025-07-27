@@ -1,7 +1,7 @@
 #!/bin/bash
 
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared.deb 
-curl -SL "https://github.com/v2fly/v2ray-core/releases/download/v5.14.1/v2ray-linux-64.zip" -o v2ray.zip
+curl -SL "https://github.com/v2fly/v2ray-core/releases/download/v5.37.0/v2ray-linux-64.zip" -o v2ray.zip
 unzip -o v2ray.zip
 rm config.json
 sleep 1
@@ -19,5 +19,4 @@ sleep 5
 nohup cloudflared tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token "eyJhIjoiZjllNjNiZmUwNjZiOTYwN2YyZTExZDliNDRjYTk0ZjYiLCJ0IjoiZjljZDliMTItNzdmNC00OWYwLWJhZDktMzJmY2I1YTI0ZWJjIiwicyI6Ik5UQmhNR0V3TTJZdFpUSmhaUzAwT0RabUxUa3habUl0TXpOaFpXRXpZemxrWlRrMCJ9" >/dev/null 2>&1 &
 sleep 10
 netstat -ntlp
-sleep 5
-node ./index.js
+
